@@ -28,20 +28,48 @@ JavaScript Engine
 JavaScript Engine (in Global Execution Context) creates two things for you; (we dont have to create it in the code)
 Global Objects, this
 
-ToCheck:
-but even we dont have javascript, we can access this??
-
 for example, in a browser,
 each tab will have a separate global object, which is the 'window'.
 But in node env, this is not the window
 
 In a code level, global is just 'not inside a function'
 
+ToCheck:
+but even we dont have javascript, we can access this??
+
 ================
 
 
 2.15
 Invocation is done using paranthesis
+execution stack
+when u invoke a function in js, a new exec context is created and put on top of execution stack
+and then starts executing line by line. But if it reaches another function invocation, it creates another execution
+context and put on the execution stack
+This is true even if the function calls itself
+JS is synchronous
+and single threaded
 
+
+2.16
+Variable Environment: where the variables live
+every execution context will have it's own variable Environment
+execution context vs variable environment?
+scope is the same?
+
+
+2.17
+js cares about the lexical environment when it wants to reference the outer reference
+even though a function b is called inside function a, if the b function is written in the global execution context,
+it looks for the variables there.
+scope chain
+
+2.18
+scope: where a variable is available in your code
+block scoping
+"let" -> 
+1. only available for the current block - block scoping
+2. during the execution phase, it is added to memory and set to undefined as usual.
+but the engine won't allow you to use it until it is declared (until the line of declaration is called). not hoisted?
 
 
