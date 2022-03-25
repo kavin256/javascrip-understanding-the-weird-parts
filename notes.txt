@@ -1,5 +1,47 @@
-dfsfdsdf
+2.7
+Syntax parser
+a program that reads your code and determines what it does and if it is valid gramatically
+interpriters and compilers - check that
+
+Lexical Environment (word related / valubulary)
+where it is written, what surrounds that
+
+Execution context
+a wrapper to help manage the code that is running
+
+================
+
+
+2.8
+name /value pairs are straight forward
+Objects are a collection of name/value pairs (in JavaScript. May be not in other languages)
+
+================
+
+
+2.10
+Execution context
+Base execution context is the global execution context
+
+JavaScript Engine
+
+JavaScript Engine (in Global Execution Context) creates two things for you; (we dont have to create it in the code)
+Global Objects, this
+
+ToCheck:
+but even we dont have javascript, we can access this??
+
+for example, in a browser,
+each tab will have a separate global object, which is the 'window'.
+But in node env, this is not the window
+
+In a code level, global is just 'not inside a function'
+
+================
+
+
+2.15
+Invocation is done using paranthesis
 
 
 
-dsd
