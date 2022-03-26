@@ -9,15 +9,9 @@ where it is written, what surrounds that
 Execution context
 a wrapper to help manage the code that is running
 
-================
-
-
 2.8
 name /value pairs are straight forward
 Objects are a collection of name/value pairs (in JavaScript. May be not in other languages)
-
-================
-
 
 2.10
 Execution context
@@ -36,9 +30,6 @@ In a code level, global is just 'not inside a function'
 
 ToCheck:
 but even we dont have javascript, we can access this??
-
-================
-
 
 2.15
 Invocation is done using paranthesis
@@ -87,6 +78,7 @@ event loop is that continuous check
 Dynamic typing: you dont tell the engine what type of data a variable holds
 As opposed to Static typing
 
+3.21
 Primitive types: A single value. Not an Object
 6 primitive type;
 1. undefined: represents a lack of a value. you should NOT explicitly set this value
@@ -96,4 +88,139 @@ Primitive types: A single value. Not an Object
 5. string: both "" and '' can be used
 6. symbol: from ES6
 
+3.23
+Operator precedence: order of precedence of operators
+Associativity: what order a operator gets called. right to left or left to right (for same precedence operators)
 
+3.25
+Coercion: converting a value from one type to another
+because js is dynamically typed
+eg: 1 + '2' -> '12'
+
+3.26
+console.log(3 < 2 < 1) ->  returns true. Not false
+because of left associavity of less than operator and coercion (Number(true) -> 1 & Number(false) -> 0)
+NaN: Not a Number.
+eg:
+Number(undefined) -> NaN
+Number(null) -> 0
+false == 0 -> true
+
+So, checking if two things are equal is important to reduce coerciion bugs
+
+4.32
+creating Objects
+var person = new Object()
+var person = {} // object literal
+
+4.33
+Namespace: a container for variables and functions
+JS doesn't have a namespace. so it fakes it
+by using Objects
+
+4.34
+JSON vs Objects
+JSON was inspired by Object literal notation
+there are differences;
+JSON: properties MUST be wrapped in quotes. You can have Object literal with properties wrapped in quotes
+
+but they are working well with each other. So we have in build JSON.parse() and JSON.stringify()
+
+4.35
+In JS, Functions are Objects
+First class functions: everything that you can do with objects, you can do that with functions.
+you can pass, you can assign a function to a variable
+
+Function Object is a special type of object. there are some additional properties
+code is a property. Not that the code itself is the function. But it is invocable
+this is an important model to understand JS
+You can even attack a property to a function
+
+4.36
+function expression vs function statement
+function expression is just a unit of code that results in a value. you can assign that into a variable. eg: a = 3, 1 + 2
+statement does a work. you cannot assign that into a value. eg: if (a === 3) {}
+
+4.37
+Mutate: change. immutable means cannot change
+
+4.38
+When a function is invoked, an execution context is created
+when u r just invoking a function, this keyword points to the global execution context
+but if it a method on an object, this keyword becomes the object that very object that contains the function
+
+var self = this;
+
+4.39
+Array literal syntax: []
+
+4.40
+we can invoke a function that expects arguments, without arguments. the values will be undefined. but still you can invoke without any error
+because of hoisting
+you can access all the arguments using 'arguments' keyword
+it's array-like. Not an array. It doesn't have all the features that an array does.
+you can set default values by language = language || 'english'
+UNLIKE JAVA !!!
+In java, this will be overLoading
+
+we can use (in newer versions) spread operators to access additional arguments
+
+4.42
+Syntax parser: goes character by character and makes sure the code is right
+
+4.43
+automatic semicolon insertion bu syntax parser
+always put your own semi-colon
+specially in return statements
+
+eg:
+return
+{
+    firstname: 'Tony'
+}
+
+this will return an undefined.
+
+So use the opening bracket in the same line as return keyword
+eg:
+return {
+    firstname: 'Tony'
+}
+
+4.45
+IIFE: Immediately Invoked Function Expression
+function(){}();
+
+if u want to have a function with no name and invoke it immediately, (using both the ways)
+(function(){}());
+(function(){})();
+
+not even touching the global execution context.
+So, libraries always use this
+if u want to pass the global object, u can pass it as a parameter always. no issue
+
+4.47
+Understanding Closures
+eg:
+function greet(whattosay) {
+    return function(name) {
+        console.log(whattosay + ' ' + name)
+    }
+}
+
+when u invoke this u get a function
+var sayHi = greet('Hi');
+sayHi('Tony');
+this is possible because of clasures
+
+eventhough the execution stack is poped already when the sayHi method is called,
+in closures, the execution context has closed in even though the execution context is cleared out
+Closures are a javascript feature
+Basically, a reference is maintained so that the garbage collector will not clear it out
+So, it has access to those outer variables
+
+JS engine creates a closure. We just use it
+
+4.49
+patterns that use power of closures;
+D16b_ClosuresPart2
