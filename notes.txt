@@ -72,4 +72,28 @@ block scoping
 2. during the execution phase, it is added to memory and set to undefined as usual.
 but the engine won't allow you to use it until it is declared (until the line of declaration is called). not hoisted?
 
+2.19
+Asynchronous: more than one at a time
+JS engine is synchronous. But the other parts (engines) of the browser are Asynchronous
+Event Queue is a seperate list in the js Engine
+this is full of notifications of events
+event eg: data requested is finished now!
+
+JS looks at the event queue ONLY when the execution stack is empty. Periodically, JS looks at the event queue
+The browser is the one who runs asynchronously
+event loop is that continuous check
+
+3.20
+Dynamic typing: you dont tell the engine what type of data a variable holds
+As opposed to Static typing
+
+Primitive types: A single value. Not an Object
+6 primitive type;
+1. undefined: represents a lack of a value. you should NOT explicitly set this value
+2. null: also represents a lack of value. You can assign this. No issue
+3. boolean: true or false
+4. number: a floating point number
+5. string: both "" and '' can be used
+6. symbol: from ES6
+
 
