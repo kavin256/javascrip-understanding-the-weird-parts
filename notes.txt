@@ -224,3 +224,24 @@ JS engine creates a closure. We just use it
 4.49
 patterns that use power of closures;
 D16b_ClosuresPart2
+
+4.51
+call(), apply(), bind()
+basically we can control what 'this' referes to
+all functions have access to three functions above
+
+bind(): creates a copy and replaces 'this'
+call(): calls the function just like using paranthesis (). But call lets you define what 'this' means
+it doesnt create a copy. just executes
+apply(): exact as call(). But it wants an array of arguments. It could be useful
+
+you can grab methods from other objects and use it on a different object
+
+D19_CallApplyBind
+
+Function currying: setting up arguments permenently. remember that bind doesn't invoke methods
+basically, preset parameters. used mostly in mathematical use cases
+var multipleByTwo = multiply.bind(this, 2);
+
+4.52
+Functional Programming
