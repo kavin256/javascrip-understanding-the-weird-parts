@@ -245,3 +245,61 @@ var multipleByTwo = multiply.bind(this, 2);
 
 4.52
 Functional Programming
+
+D20b_FunctionalProgrammingPart2
+
+4.53
+underscore.js library
+lodash.js
+use above for functional Programming documentation
+
+5.54
+inheritance
+classical vs prototypal inheritance
+js has prototypal inheritance. not the classical inheritance
+all objects have a prototype property. it has reference to another object
+prototype chain
+two objects can share a same prototype object. they are pointing to the same prototype
+
+5.56
+Everything in javascript which is not a primitive is an object
+except one thing. Base Object
+
+5.57
+Reflection: an object can look at itself, listing and changing its properties and methods
+
+
+// dont ever do this;
+john-__proto__ = person;
+
+// this will print only the own properties
+for (var prop in john) {
+    if(john.hasOwnProperty(prop)) {
+        console.log(prop + ': ' + john[prop]);
+    }
+}
+
+var jane = {
+    address: '111 Main St.',
+    getFormalFullName: function() {
+        return this.lastname + ', ' + this.firstname;   
+    }
+}
+
+var jim = {
+    getFirstName: function() {
+        return firstname;   
+    }
+}
+
+_.extend(john, jane, jim); from underscore library
+
+6.58
+JavaScript has nothing to do with Java. It's just marketing
+new keyword was introduced to convice java developers.
+when new keyword is called. it creates a new object and invokes it
+if u dont return anything.
+this is set to that new Object
+
+6.59
+The prototype property of a function is NOT the prototype of the function!!!!!
