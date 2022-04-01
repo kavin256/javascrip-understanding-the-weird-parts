@@ -303,3 +303,26 @@ this is set to that new Object
 
 6.59
 The prototype property of a function is NOT the prototype of the function!!!!!
+functions are objects. so they take up space.
+so, from a efficiency stand point, it's a good idea that you add functions into the prototype
+Person.prototype.getFormalFullName = function(){
+    return 'hello';
+}
+if we dont put 'new' keyword, since the function doesnt return anything, the variable will be set to undefined
+
+6.61
+function constructors. they create objects
+var a = new String("John")
+now a is an object. A string object. Not a primitive string
+they look like you are creating primitives. but they are not. 
+It wraps a primitive and adds additional functionalities
+
+6.63
+Arrays are objects too!
+when for-in is used to iterate, you iterate down to the prototype
+but when we use for(var i = 0;i< arr.length; i++)
+
+6.64
+there's another way to create objects
+not only function constructors or object literals/ array literals
+Object.create
