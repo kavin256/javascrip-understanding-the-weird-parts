@@ -326,3 +326,60 @@ but when we use for(var i = 0;i< arr.length; i++)
 there's another way to create objects
 not only function constructors or object literals/ array literals
 Object.create
+
+7.68
+"use strict" for strict mode
+this is used either globally or to a certain execution context
+has to be the first line
+
+8.70
+open source education
+eg:
+github > explore > front end javascript frameworks
+
+8.71
+JQuerry doesnt add any features to JS
+easy to handle browser elements. can manipulate DOM easily
+
+8.73
+you can chain methods when the function returns 'this'
+
+12.87
+Promises
+you can pipe functions using .then function
+.then the function returns a Promise again
+
+eg:
+let someText = new Promise(doWork);
+
+someText
+.then((val) => {
+    console.log("1st log" + val);
+    return "How are you?";
+})
+.then((val) => {
+    console.log(val);
+});
+
+even better,
+if we return a new promise instead of "How are you?",
+you can do async work easily
+
+example for promises: fetch
+fetch('video.json)
+.then(response => response.json())
+.then(data => console.log(data))
+
+above, .json return a promise
+
+Thennable Object: an object that has a then object
+
+Async/Await
+they depend on promises under the hood
+they are just syntactic sugar
+what's really happenning;
+when the stack sees the keyword await, it pauses there and sends the entire wrapping function to a queue aside
+the the promise return data, the rest of the function (workflow) continues
+
+so if a function has two await lines, it will pause twice
+

@@ -1,0 +1,3 @@
+- how observables work
+- how async await works in a deeper level
+- arrayLike?
